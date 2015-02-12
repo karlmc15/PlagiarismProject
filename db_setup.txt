@@ -1,0 +1,5 @@
+// Set up database with user: root and password: password
+
+create database csc440;
+use csc440;
+create table users (username varchar(20), usertype enum('Faculty', 'Student', 'Admin'), password character(40), primary key(username));
