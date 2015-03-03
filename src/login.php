@@ -1,10 +1,12 @@
 <html>
 	<head>
-		<title>Plagiarism Detector</title>
+		<title>Plagiarism Detector - Log In</title>
+		<link rel="stylesheet" type="text/css" href="style/stylesheet.css">
 	</head>
 
 	<body>
-		<h1>Please Log In</h1>
+		<div class="center">
+			<h1>Please Log In</h1>
 <?php
 	// If submit button was not clicked ignore whole script and load original login page
 	if (isset($_POST['submit'])){
@@ -59,11 +61,12 @@
 	}
 ?>
 		
-		<form method="post" action="login.php">
-			<p>Username: <input type="text" name="username"></p>
-			<p>Password: <input type="password" name="password"></p>
-			<p><input type="submit" name="submit" value="Login"></p>
-		</form>
-		<a href="insert_user.php" >Create a New Account</a>
+			<form method="post" action="login.php">
+				<p>Username: <input id="textInput" type="text" name="username"></p>
+				<p>Password: <input id="textInput" type="password" name="password"></p>
+				<p><input id="submitButton" type="submit" name="submit" value="Login"></p>
+			</form>
+			<a href="new_user.php" >Create a New Account</a>
+		</div>
 	</body>
 </html>

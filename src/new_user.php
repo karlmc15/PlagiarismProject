@@ -1,9 +1,11 @@
 <html>
 	<head>
-		<title>Plagiarism Detector</title>
+		<title>Plagiarism Detector - New User</title>
+		<link rel="stylesheet" type="text/css" href="style/stylesheet.css">
 	</head>
 	<body>
-		<h1>Create a New Account</h1>
+		<div class="center">
+			<h1>Create a New Account</h1>
 <?php
 	// If submit button was not clicked ignore whole script and load original page
 	if (isset($_POST['submit'])){
@@ -27,7 +29,7 @@
 			exit;
 		}
 		
-		// Query the database to see if there is username exists
+		// Query the database to see if username exists
 		$query = "select count(*) from users where username = '".$username."'";
 
 		// Check if query was successful
@@ -65,31 +67,17 @@
 	}
 ?>
 
-		<form action="insert_user.php" method="post">
-			<table border="0">
-				<tr>
-					<td>Username</td>
-					<td><input type="text" name="username" maxlength="20" size="20"></td>
-				</tr>
-				<tr>
-					<td>Password</td>
-					<td> <input type="password" name="password" maxlength="40" size="20"></td>
-				</tr>
-				<tr>
-					<td>User Type</td>
-					<td>
-						 <select name="usertype">
-							<option value="Student">Student</option>
-							<option value="Faculty">Faculty</option>
-							<option value="Admin">Admin</option>
-						</select> 
-					</td>
-				</tr>
-				<tr>
-					<td colspan="2"><input type="submit" name="submit" value="Create"></td>
-				</tr>
-			</table>
-		</form>
+			<form action="new_user.php" method="post">
+			<form method="post" action="new_user.php">
+				<p>Username: <input id="textInput" type="text" name="username"></p>
+				<p>Password: <input id="textInput" type="password" name="password"></p>
+				<p>User Type: <select name="usertype">
+					<option value="Student">Student</option>
+					<option value="Faculty">Faculty</option>
+				</select></p>
+				<p><input id="submitButton" type="submit" name="submit" value="Create"></p>
+			</form>
+		</div>
 	</body>
 </html>
 
